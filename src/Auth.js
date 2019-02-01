@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Login from "./Component/Login"; //Always capital letter
 import "./App.css"; //My CSS
-class App extends Component {
+class Auth extends Component {
   render() {
     return (
       <div class="jumbotron-fluid">
@@ -14,4 +14,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default Auth;
