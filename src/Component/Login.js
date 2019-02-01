@@ -13,19 +13,30 @@ class Login extends Component {
       .then(success => success.json())
       .then(success => {
         // console.log(success.items[0].avatar_url);
-        this.setState({ avatar: success.items[0].avatar_url });
+        // this.setState({ avatar: success.items[0].avatar_url });
+        if (success.total_count !== 1) {
+          if (success.items[0].login === pseudo) {
+            this.setState({ avatar: success.items[0].avatar_url });
+          } else {
+            alert("Error wrong entry or avatar not found");
+          }
+        } else {
+          this.setState({ avatar: success.items[0].avatar_url });
+        }
       });
   };
   render() {
     return (
       <div class="container">
-        <input id="pseudo" type="text" />
-        <input
-          type="button"
-          class="btn btn-success"
-          value="Click Here"
-          onClick={this.getAvatar}
-        />
+        <form>
+          <input id="pseudo" type="text" />
+          <input
+            type="button"
+            class="btn btn-success"
+            value="Login"
+            onClick={this.getAvatar}
+          />
+        </form>
         <img src={this.state.avatar} alt={""} />
       </div>
     );
