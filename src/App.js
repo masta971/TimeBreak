@@ -1,5 +1,5 @@
 import React, { Component} from  "react";
-import Login from "./Login" //Always capital letter
+import Login from "./Component/Login" //Always capital letter
 import "./App.css" //My CSS
 class App extends Component {
     render() {
